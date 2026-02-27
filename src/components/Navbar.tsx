@@ -44,7 +44,10 @@ const Navbar = () => {
 
   const handleClick = (href: string) => {
     setMobileOpen(false);
-    if (location.pathname !== "/") {
+    if (href.startsWith("/")) {
+      // External route
+      navigate(href);
+    } else if (location.pathname !== "/") {
       navigate("/" + href);
     } else {
       navigate(href);
@@ -92,7 +95,7 @@ const Navbar = () => {
             </button>
           ))}
           <button
-            onClick={() => handleClick("#cta")}
+            onClick={() => handleClick("/learnovac-neo")}
             className="px-5 py-2 rounded-lg text-sm font-heading font-semibold text-primary-foreground bg-primary glow-cyan hover:scale-105 transition-all duration-300"
           >
             Get Started
@@ -123,7 +126,7 @@ const Navbar = () => {
             </button>
           ))}
           <button
-            onClick={() => handleClick("#cta")}
+            onClick={() => handleClick("/learnovac-neo")}
             className="w-full px-5 py-2 rounded-lg text-sm font-heading font-semibold text-primary-foreground bg-primary glow-cyan"
           >
             Get Started
