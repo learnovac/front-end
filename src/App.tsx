@@ -10,6 +10,7 @@ import Documentation from "./pages/Documentation";
 import Careers from "./pages/Careers";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import LearnovacNeo from "./pages/LearnovacNeo";
 import Preloader from "./components/Preloader";
 import CookieConsent from "./components/CookieConsent";
 import ScrollToTop from "./components/ScrollToTop";
@@ -27,6 +28,7 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/learnovac-neo" element={<LearnovacNeo />} />
           <Route path="/changelog" element={<Changelog />} />
           <Route path="/documentation" element={<Documentation />} />
           <Route path="/careers" element={<Careers />} />

@@ -1,5 +1,6 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import NeuralBackground from "./NeuralBackground";
 import heroBg from "@/assets/hero-bg.webp";
 import { ArrowRight, Cpu, Zap, Brain, Users, TrendingUp } from "lucide-react";
@@ -43,6 +44,7 @@ const CountUpNumber = ({ end, decimals = 0, prefix = "", suffix = "", label, col
 };
 
 const Hero = () => {
+  const navigate = useNavigate();
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -117,7 +119,7 @@ const Hero = () => {
               transition={{ duration: 0.7, delay: 0.55 }}
             >
               <button
-                onClick={() => scrollTo("#cta")}
+                onClick={() => navigate("/learnovac-neo")}
                 className="group relative px-7 py-3.5 rounded-lg font-heading font-semibold text-primary-foreground bg-primary overflow-hidden transition-all duration-300 glow-cyan hover:scale-105 flex items-center gap-2"
               >
                 <span className="relative z-10 text-sm md:text-base">Enter Intelligence Layer</span>
